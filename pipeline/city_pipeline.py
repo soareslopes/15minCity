@@ -69,8 +69,9 @@ def process_city(city_name, config):
         .replace(" ", "_")
         .replace(",", "")
     )
-    city_dir = out_dir / city_folder_name(city_name)
+    city_dir = out_dir / "cities" / city_folder_name(city_name)
     city_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "gpkg").mkdir(parents=True, exist_ok=True)
     intervals = config["accessibility"]["time_intervals_min"]
     speed = config["accessibility"]["walk_speed_ms"]
     pop_col = config["inequality"]["pop_column"]
@@ -132,7 +133,7 @@ def process_city(city_name, config):
 
     # Resolve PBF here so both network (step 3) and POIs (step 4) can use it
     pbf_path = None
-    pbf_cache = Path(config["paths"]["output_dir"]) / "pbf_cache"
+    pbf_cache = out_dir / "cache" / "pbf_cache"
     city_pbf = city_dir / f"{city_safe}.osm.pbf"
     try:
         regional_pbf, region_id = util_geofabrik.get_pbf(city_geom, str(pbf_cache))
@@ -236,7 +237,7 @@ def process_city(city_name, config):
     t0 = time.time()
     ghsl_dir = city_dir / "ghsl"
     ghsl_dir.mkdir(parents=True, exist_ok=True)
-    ghsl_cache = out_dir / "ghsl_cache"
+    ghsl_cache = out_dir / "cache" / "ghsl_cache"
     ghsl_cache.mkdir(parents=True, exist_ok=True)
 
     try:
@@ -332,14 +333,14 @@ def process_city(city_name, config):
     # ------------------------------------------------------------------
     _step(8 + _ofs, STEPS, "Saving GeoPackage")
     t0 = time.time()
-    gpkg_out = city_dir / f"{city_safe}.gpkg"
+    gpkg_out = out_dir / "gpkg" / f"{city_folder_name(city_name)}.gpkg"
     hex_final.to_file(gpkg_out)
     n_cols = len(hex_final.columns)
     print(f"     OK — {gpkg_out.name}  ({len(hex_final):,} hexagons × {n_cols} columns)"
           f" ({time.time()-t0:.1f}s)")
 
     metric_map = f"total_dest_{intervals[0]}min"
-    map_path = city_dir / f"{city_safe}_map_{metric_map}.png"
+    map_path = city_dir / f"{city_folder_name(city_name)}_map_{metric_map}.png"
     make_accessibility_map(hex_final, city_geom, metric_map, map_path, city_name)
 
     # ------------------------------------------------------------------

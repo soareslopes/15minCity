@@ -1,4 +1,4 @@
-# 15-Minute City — Urban Accessibility Outputs
+# Outputs
 
 Este diretório contém todos os dados e visualizações gerados automaticamente pelo pipeline **Urban Accessibility**. A estrutura está organizada para separar resultados consolidados, dados geoespaciais por cidade, ficheiros de processamento intermédio (cache) e análises comparativas.
 

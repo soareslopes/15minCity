@@ -11,8 +11,18 @@ __pycache__/
 output/
 cache/
 
+# Large geospatial files
+*.gpkg
+*.pbf
+*.osm.pbf
+*.tif
+*.tiff
+
 # Backups
 bak/
+
+# Data folder (large files)
+data/
 
 # macOS
 .DS_Store

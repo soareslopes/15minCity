@@ -21,8 +21,10 @@ cache/
 # Backups
 bak/
 
-# Data folder (large files)
-data/
+# Data folder (large files — keep folder structure only)
+data/**
+!data/*/
+!data/**/.gitkeep
 
 # macOS
 .DS_Store

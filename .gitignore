@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+
+# Output data (generated, can be large)
+output/
+cache/
+
+# Backups
+bak/
+
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+
+# direnv (system-specific activation)
+.envrc

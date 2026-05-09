@@ -1,0 +1,551 @@
+﻿Key;Value;Key_Value;old_Type;old_Type_Name;Subtype;SubType_Name;Type;Type_Name
+amenity;courthouse;amenity|courthouse;8;Public Service;8;Public Service;10;Public Service
+amenity;embassy;amenity|embassy;8;Public Service;8;Public Service;10;Public Service
+amenity;fire_station;amenity|fire_station;8;Public Service;8;Public Service;10;Public Service
+amenity;police;amenity|police;8;Public Service;8;Public Service;10;Public Service
+amenity;post_office;amenity|post_office;8;Public Service;8;Public Service;10;Public Service
+amenity;prison;amenity|prison;8;Public Service;8;Public Service;10;Public Service
+amenity;ranger_station;amenity|ranger_station;8;Public Service;8;Public Service;10;Public Service
+amenity;townhall;amenity|townhall;8;Public Service;8;Public Service;10;Public Service
+building;civic;building|civic;8;Public Service;8;Public Service;10;Public Service
+building;fire_station;building|fire_station;8;Public Service;8;Public Service;10;Public Service
+building;government;building|government;8;Public Service;8;Public Service;10;Public Service
+building;public;building|public;8;Public Service;8;Public Service;10;Public Service
+amenity;monastery;amenity|monastery;9;Religious;9;Religious;9;Religious
+amenity;place_of_worship;amenity|place_of_worship;9;Religious;9;Religious;9;Religious
+building;cathedral;building|cathedral;9;Religious;9;Religious;9;Religious
+building;chapel;building|chapel;9;Religious;9;Religious;9;Religious
+building;church;building|church;9;Religious;9;Religious;9;Religious
+building;monastery;building|monastery;9;Religious;9;Religious;9;Religious
+building;mosque;building|mosque;9;Religious;9;Religious;9;Religious
+building;shrine;building|shrine;9;Religious;9;Religious;9;Religious
+building;synagogue;building|synagogue;9;Religious;9;Religious;9;Religious
+building;temple;building|temple;9;Religious;9;Religious;9;Religious
+amenity;car_rental;amenity|car_rental;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+building;commercial;building|commercial;5;Retail;5.5;Retail | General store;8;Retail
+building;kiosk;building|kiosk;5;Retail;5.9;Retail | Others;8;Retail
+building;retail;building|retail;5;Retail;5.5;Retail | General store;8;Retail
+building;warehouse;building|warehouse;5;Retail;5.5;Retail | General store;8;Retail
+shop;agrarian;shop|agrarian;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;anime;shop|anime;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;antiques;shop|antiques;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;appliance;shop|appliance;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;art;shop|art;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;atv;shop|atv;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;baby_goods;shop|baby_goods;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;bag;shop|bag;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;bathroom_furnishing;shop|bathroom_furnishing;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;beauty;shop|beauty;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;bed;shop|bed;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;bicycle;shop|bicycle;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;boat;shop|boat;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;bookmaker;shop|bookmaker;5;Retail;5.9;Retail | Others;8;Retail
+shop;books;shop|books;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;boutique;shop|boutique;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;brewing_supplies;shop|brewing_supplies;5;Retail;5.9;Retail | Others;8;Retail
+shop;camera;shop|camera;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;candles;shop|candles;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;cannabis;shop|cannabis;5;Retail;5.9;Retail | Others;8;Retail
+shop;car;shop|car;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;car_parts;shop|car_parts;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;car_repair;shop|car_repair;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;caravan;shop|caravan;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;carpet;shop|carpet;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;charity;shop|charity;5;Retail;5.5;Retail | General store;8;Retail
+shop;chemist;shop|chemist;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;clothes;shop|clothes;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;collector;shop|collector;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;computer;shop|computer;5;Retail;5.3;Retail | Electronics;8;Retail
+shop;copyshop;shop|copyshop;5;Retail;5.9;Retail | Others;8;Retail
+shop;cosmetics;shop|cosmetics;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;craft;shop|craft;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;curtain;shop|curtain;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;department_store;shop|department_store;5;Retail;5.5;Retail | General store;8;Retail
+shop;doityourself;shop|doityourself;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;doors;shop|doors;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;drugstore;shop|drugstore;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;dry_cleaning;shop|dry_cleaning;5;Retail;5.9;Retail | Others;8;Retail
+shop;e-cigarette;shop|e-cigarette;5;Retail;5.9;Retail | Others;8;Retail
+shop;electrical;shop|electrical;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;electronics;shop|electronics;5;Retail;5.3;Retail | Electronics;8;Retail
+shop;energy;shop|energy;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;erotic;shop|erotic;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;fabric;shop|fabric;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;fashion;shop|fashion;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;fashion_accessories;shop|fashion_accessories;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;fireplace;shop|fireplace;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;fishing;shop|fishing;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;flooring;shop|flooring;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;florist;shop|florist;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;frame;shop|frame;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;fuel;shop|fuel;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;funeral_directors;shop|funeral_directors;5;Retail;5.9;Retail | Others;8;Retail
+shop;furniture;shop|furniture;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;games;shop|games;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;garden_centre;shop|garden_centre;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;garden_furniture;shop|garden_furniture;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;gas;shop|gas;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;general;shop|general;5;Retail;5.5;Retail | General store;8;Retail
+shop;gift;shop|gift;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;glaziery;shop|glaziery;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;golf;shop|golf;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;groundskeeping;shop|groundskeeping;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;hairdresser;shop|hairdresser;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;hairdresser_supply;shop|hairdresser_supply;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;hardware;shop|hardware;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;hearing_aids;shop|hearing_aids;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;herbalist;shop|herbalist;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;hifi;shop|hifi;5;Retail;5.3;Retail | Electronics;8;Retail
+shop;household_linen;shop|household_linen;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;houseware;shop|houseware;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;hunting;shop|hunting;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;interior_decoration;shop|interior_decoration;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;jetski;shop|jetski;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;jewelry;shop|jewelry;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;kiosk;shop|kiosk;5;Retail;5.5;Retail | General store;8;Retail
+shop;kitchen;shop|kitchen;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;lamps;shop|lamps;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;laundry;shop|laundry;5;Retail;5.9;Retail | Others;8;Retail
+shop;leather;shop|leather;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;lighting;shop|lighting;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;locksmith;shop|locksmith;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;lottery;shop|lottery;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;mall;shop|mall;5;Retail;5.5;Retail | General store;8;Retail
+shop;massage;shop|massage;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;medical_supply;shop|medical_supply;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;military_surplus;shop|military_surplus;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;mobile_phone;shop|mobile_phone;5;Retail;5.3;Retail | Electronics;8;Retail
+shop;model;shop|model;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;money_lender;shop|money_lender;5;Retail;5.9;Retail | Others;8;Retail
+shop;motorcycle;shop|motorcycle;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;music;shop|music;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;musical_instrument;shop|musical_instrument;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;newsagent;shop|newsagent;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;nutrition_supplements;shop|nutrition_supplements;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;optician;shop|optician;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;outdoor;shop|outdoor;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;paint;shop|paint;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;party;shop|party;5;Retail;5.9;Retail | Others;8;Retail
+shop;pawnbroker;shop|pawnbroker;5;Retail;5.9;Retail | Others;8;Retail
+shop;perfumery;shop|perfumery;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;pet;shop|pet;5;Retail;5.9;Retail | Others;8;Retail
+shop;pet_grooming;shop|pet_grooming;5;Retail;5.9;Retail | Others;8;Retail
+shop;photo;shop|photo;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;pyrotechnics;shop|pyrotechnics;5;Retail;5.9;Retail | Others;8;Retail
+shop;radiotechnics;shop|radiotechnics;5;Retail;5.3;Retail | Electronics;8;Retail
+shop;religion;shop|religion;5;Retail;5.9;Retail | Others;8;Retail
+shop;scuba_diving;shop|scuba_diving;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;second_hand;shop|second_hand;5;Retail;5.5;Retail | General store;8;Retail
+shop;security;shop|security;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;sewing;shop|sewing;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;shoes;shop|shoes;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;ski;shop|ski;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;snowmobile;shop|snowmobile;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;sports;shop|sports;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;stationery;shop|stationery;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;storage_rental;shop|storage_rental;5;Retail;5.9;Retail | Others;8;Retail
+shop;swimming_pool;shop|swimming_pool;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;tailor;shop|tailor;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;tattoo;shop|tattoo;5;Retail;5.6;Retail | Health and Beauty;8;Retail
+shop;ticket;shop|ticket;5;Retail;5.8;Retail | Stationery, gifts, books, newspapers;8;Retail
+shop;tiles;shop|tiles;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;tobacco;shop|tobacco;5;Retail;5.9;Retail | Others;8;Retail
+shop;toys;shop|toys;5;Retail;5.9;Retail | Others;8;Retail
+shop;trade;shop|trade;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;trailer;shop|trailer;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;travel_agency;shop|travel_agency;5;Retail;5.9;Retail | Others;8;Retail
+shop;trophy;shop|trophy;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;tyres;shop|tyres;5;Retail;5.7;Retail | Outdoor and sport, vehicles;8;Retail
+shop;vacuum_cleaner;shop|vacuum_cleaner;5;Retail;5.3;Retail | Electronics;8;Retail
+shop;variety_store;shop|variety_store;5;Retail;5.5;Retail | General store;8;Retail
+shop;video;shop|video;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;video_games;shop|video_games;5;Retail;5.1;Retail | Art, music, hobbies;8;Retail
+shop;watches;shop|watches;5;Retail;5.4;Retail | Fashion;8;Retail
+shop;weapons;shop|weapons;5;Retail;5.9;Retail | Others;8;Retail
+shop;wholesale;shop|wholesale;5;Retail;5.5;Retail | General store;8;Retail
+shop;window_blind;shop|window_blind;5;Retail;5.2;Retail | DYI, Household, Furniture;8;Retail
+shop;wool;shop|wool;5;Retail;5.4;Retail | Fashion;8;Retail
+amenity;bar;amenity|bar;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;biergarten;amenity|biergarten;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;cafe;amenity|cafe;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;fast_food;amenity|fast_food;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;food_court;amenity|food_court;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;ice_cream;amenity|ice_cream;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;internet_cafe;amenity|internet_cafe;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;pub;amenity|pub;4;Food-related;4;Food-related;7;Eating & drinking establishments
+amenity;restaurant;amenity|restaurant;4;Food-related;4;Food-related;7;Eating & drinking establishments
+shop;bakery;shop|bakery;4;Food-related;4;Food-related;7;Eating & drinking establishments
+leisure;garden;leisure|garden;10;Sports and recreation;10;Sports and recreation;6;Parks and other green areas
+leisure;nature_reserve;leisure|nature_reserve;10;Sports and recreation;10;Sports and recreation;6;Parks and other green areas
+leisure;park;leisure|park;10;Sports and recreation;10;Sports and recreation;6;Parks and other green areas
+amenity;arts_centre;amenity|arts_centre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;brothel;amenity|brothel;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;casino;amenity|casino;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;cinema;amenity|cinema;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;community_centre;amenity|community_centre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;conference_centre;amenity|conference_centre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;dive_centre;amenity|dive_centre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;events_venue;amenity|events_venue;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;gambling;amenity|gambling;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;kneipp_water_cure;amenity|kneipp_water_cure;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;love_hotel;amenity|love_hotel;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;nightclub;amenity|nightclub;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;planetarium;amenity|planetarium;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;public_bath;amenity|public_bath;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;social_centre;amenity|social_centre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;stripclub;amenity|stripclub;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;studio;amenity|studio;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;swingerclub;amenity|swingerclub;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+amenity;theatre;amenity|theatre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+leisure;adult_gaming_centre;leisure|adult_gaming_centre;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+leisure;amusement_arcade;leisure|amusement_arcade;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+leisure;dance;leisure|dance;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+leisure;escape_game;leisure|escape_game;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+leisure;hackerspace;leisure|hackerspace;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+leisure;stadium;leisure|stadium;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+tourism;aquarium;tourism|aquarium;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+tourism;gallery;tourism|gallery;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+tourism;information;tourism|information;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+tourism;museum;tourism|museum;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+tourism;theme_park;tourism|theme_park;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+tourism;zoo;tourism|zoo;3;Entertainment, Arts & Culture;3;Entertainment, Arts & Culture;5;Culture and leisure
+building;pavilion;building|pavilion;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+building;riding_hall;building|riding_hall;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+building;sports_hall;building|sports_hall;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+building;stadium;building|stadium;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;disc_golf_course;leisure|disc_golf_course;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;dog_park;leisure|dog_park;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;fitness_centre;leisure|fitness_centre;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;fitness_station;leisure|fitness_station;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;horse_riding;leisure|horse_riding;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;ice_rink;leisure|ice_rink;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;marina;leisure|marina;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;miniature_golf;leisure|miniature_golf;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;pitch;leisure|pitch;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;playground;leisure|playground;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;sauna;leisure|sauna;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;sports_centre;leisure|sports_centre;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;summer_camp;leisure|summer_camp;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;swimming_pool;leisure|swimming_pool;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;track;leisure|track;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+leisure;water_park;leisure|water_park;10;Sports and recreation;10;Sports and recreation;4;Sports and recreation
+amenity;baby_hatch;amenity|baby_hatch;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;clinic;amenity|clinic;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;dentist;amenity|dentist;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;doctors;amenity|doctors;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;hospital;amenity|hospital;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;nursing_home;amenity|nursing_home;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;pharmacy;amenity|pharmacy;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;social_facility;amenity|social_facility;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;veterinary;amenity|veterinary;6;Healthcare;6;Healthcare;3;Healthcare
+building;hospital;building|hospital;6;Healthcare;6;Healthcare;3;Healthcare
+amenity;marketplace;amenity|marketplace;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+building;supermarket;building|supermarket;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;alcohol;shop|alcohol;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;beverages;shop|beverages;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;butcher;shop|butcher;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;cheese;shop|cheese;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;chocolate;shop|chocolate;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;coffee;shop|coffee;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;confectionery;shop|confectionery;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;convenience;shop|convenience;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;dairy;shop|dairy;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;deli;shop|deli;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;farm;shop|farm;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;frozen_food;shop|frozen_food;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;greengrocer;shop|greengrocer;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;health_food;shop|health_food;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;ice_cream;shop|ice_cream;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;organic;shop|organic;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;pasta;shop|pasta;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;pastry;shop|pastry;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;seafood;shop|seafood;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;spices;shop|spices;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;supermarket;shop|supermarket;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;tea;shop|tea;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;water;shop|water;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+shop;wine;shop|wine;4;Food-related;4;Food-related;2;Supermarkets, markets, food shops
+amenity;childcare;amenity|childcare;2;Education;2;Education;1;Education
+amenity;college;amenity|college;2;Education;2;Education;1;Education
+amenity;driving_school;amenity|driving_school;2;Education;2;Education;1;Education
+amenity;kindergarten;amenity|kindergarten;2;Education;2;Education;1;Education
+amenity;language_school;amenity|language_school;2;Education;2;Education;1;Education
+amenity;library;amenity|library;2;Education;2;Education;1;Education
+amenity;music_school;amenity|music_school;2;Education;2;Education;1;Education
+amenity;school;amenity|school;2;Education;2;Education;1;Education
+amenity;toy_library;amenity|toy_library;2;Education;2;Education;1;Education
+amenity;university;amenity|university;2;Education;2;Education;1;Education
+building;college;building|college;2;Education;2;Education;1;Education
+building;kindergarten;building|kindergarten;2;Education;2;Education;1;Education
+building;school;building|school;2;Education;2;Education;1;Education
+building;university;building|university;2;Education;2;Education;1;Education
+building;industrial;building|industrial;1;Craft and industry;1;Craft and industry;0;
+craft;agricultural_engines;craft|agricultural_engines;1;Craft and industry;1;Craft and industry;0;
+craft;atelier;craft|atelier;1;Craft and industry;1;Craft and industry;0;
+craft;bakery;craft|bakery;1;Craft and industry;1;Craft and industry;0;
+craft;basket_maker;craft|basket_maker;1;Craft and industry;1;Craft and industry;0;
+craft;beekeeper;craft|beekeeper;1;Craft and industry;1;Craft and industry;0;
+craft;blacksmith;craft|blacksmith;1;Craft and industry;1;Craft and industry;0;
+craft;boatbuilder;craft|boatbuilder;1;Craft and industry;1;Craft and industry;0;
+craft;bookbinder;craft|bookbinder;1;Craft and industry;1;Craft and industry;0;
+craft;brewery;craft|brewery;1;Craft and industry;1;Craft and industry;0;
+craft;builder;craft|builder;1;Craft and industry;1;Craft and industry;0;
+craft;cabinet_maker;craft|cabinet_maker;1;Craft and industry;1;Craft and industry;0;
+craft;car_painter;craft|car_painter;1;Craft and industry;1;Craft and industry;0;
+craft;carpenter;craft|carpenter;1;Craft and industry;1;Craft and industry;0;
+craft;carpet_layer;craft|carpet_layer;1;Craft and industry;1;Craft and industry;0;
+craft;caterer;craft|caterer;1;Craft and industry;1;Craft and industry;0;
+craft;chimney_sweeper;craft|chimney_sweeper;1;Craft and industry;1;Craft and industry;0;
+craft;clockmaker;craft|clockmaker;1;Craft and industry;1;Craft and industry;0;
+craft;confectionery;craft|confectionery;1;Craft and industry;1;Craft and industry;0;
+craft;cooper;craft|cooper;1;Craft and industry;1;Craft and industry;0;
+craft;dental_technician;craft|dental_technician;1;Craft and industry;1;Craft and industry;0;
+craft;distillery;craft|distillery;1;Craft and industry;1;Craft and industry;0;
+craft;door_construction;craft|door_construction;1;Craft and industry;1;Craft and industry;0;
+craft;dressmaker;craft|dressmaker;1;Craft and industry;1;Craft and industry;0;
+craft;electrician;craft|electrician;1;Craft and industry;1;Craft and industry;0;
+craft;eletronics_repair;craft|electronics_repair;1;Craft and industry;1;Craft and industry;0;
+craft;embroiderer;craft|embroiderer;1;Craft and industry;1;Craft and industry;0;
+craft;engraver;craft|engraver;1;Craft and industry;1;Craft and industry;0;
+craft;floorer;craft|floorer;1;Craft and industry;1;Craft and industry;0;
+craft;gardener;craft|gardener;1;Craft and industry;1;Craft and industry;0;
+craft;glaziery;craft|glaziery;1;Craft and industry;1;Craft and industry;0;
+craft;goldsmith;craft|goldsmith;1;Craft and industry;1;Craft and industry;0;
+craft;grinding_mill;craft|grinding_mill;1;Craft and industry;1;Craft and industry;0;
+craft;handicraft;craft|handicraft;1;Craft and industry;1;Craft and industry;0;
+craft;hvac;craft|hvac;1;Craft and industry;1;Craft and industry;0;
+craft;insulation;craft|insulation;1;Craft and industry;1;Craft and industry;0;
+craft;interior_work;craft|interior_work;1;Craft and industry;1;Craft and industry;0;
+craft;jeweller;craft|jeweller;1;Craft and industry;1;Craft and industry;0;
+craft;joiner;craft|joiner;1;Craft and industry;1;Craft and industry;0;
+craft;key_cutter;craft|key_cutter;1;Craft and industry;1;Craft and industry;0;
+craft;locksmith;craft|locksmith;1;Craft and industry;1;Craft and industry;0;
+craft;metal_construction;craft|metal_construction;1;Craft and industry;1;Craft and industry;0;
+craft;mint;craft|mint;1;Craft and industry;1;Craft and industry;0;
+craft;musical_instrument;craft|musical_instrument;1;Craft and industry;1;Craft and industry;0;
+craft;oil_mill;craft|oil_mill;1;Craft and industry;1;Craft and industry;0;
+craft;optician;craft|optician;1;Craft and industry;1;Craft and industry;0;
+craft;organ_builder;craft|organ_builder;1;Craft and industry;1;Craft and industry;0;
+craft;painter;craft|painter;1;Craft and industry;1;Craft and industry;0;
+craft;parquet_layer;craft|parquet_layer;1;Craft and industry;1;Craft and industry;0;
+craft;paver;craft|paver;1;Craft and industry;1;Craft and industry;0;
+craft;photographer;craft|photographer;1;Craft and industry;1;Craft and industry;0;
+craft;photographic_laboratory;craft|photographic_laboratory;1;Craft and industry;1;Craft and industry;0;
+craft;piano_tuner;craft|piano_tuner;1;Craft and industry;1;Craft and industry;0;
+craft;plasterer;craft|plasterer;1;Craft and industry;1;Craft and industry;0;
+craft;plumber;craft|plumber;1;Craft and industry;1;Craft and industry;0;
+craft;pottery;craft|pottery;1;Craft and industry;1;Craft and industry;0;
+craft;printer;craft|printer;1;Craft and industry;1;Craft and industry;0;
+craft;printmaker;craft|printmaker;1;Craft and industry;1;Craft and industry;0;
+craft;rigger;craft|rigger;1;Craft and industry;1;Craft and industry;0;
+craft;roofer;craft|roofer;1;Craft and industry;1;Craft and industry;0;
+craft;saddler;craft|saddler;1;Craft and industry;1;Craft and industry;0;
+craft;sailmaker;craft|sailmaker;1;Craft and industry;1;Craft and industry;0;
+craft;sawmill;craft|sawmill;1;Craft and industry;1;Craft and industry;0;
+craft;scaffolder;craft|scaffolder;1;Craft and industry;1;Craft and industry;0;
+craft;sculptor;craft|sculptor;1;Craft and industry;1;Craft and industry;0;
+craft;shoemaker;craft|shoemaker;1;Craft and industry;1;Craft and industry;0;
+craft;signmaker;craft|signmaker;1;Craft and industry;1;Craft and industry;0;
+craft;stand_builder;craft|stand_builder;1;Craft and industry;1;Craft and industry;0;
+craft;stonemason;craft|stonemason;1;Craft and industry;1;Craft and industry;0;
+craft;stove_fitter;craft|stove_fitter;1;Craft and industry;1;Craft and industry;0;
+craft;sun_protection;craft|sun_protection;1;Craft and industry;1;Craft and industry;0;
+craft;tailor;craft|tailor;1;Craft and industry;1;Craft and industry;0;
+craft;tiler;craft|tiler;1;Craft and industry;1;Craft and industry;0;
+craft;tinsmith;craft|tinsmith;1;Craft and industry;1;Craft and industry;0;
+craft;toolmaker;craft|toolmaker;1;Craft and industry;1;Craft and industry;0;
+craft;turner;craft|turner;1;Craft and industry;1;Craft and industry;0;
+craft;upholsterer;craft|upholsterer;1;Craft and industry;1;Craft and industry;0;
+craft;watchmaker;craft|watchmaker;1;Craft and industry;1;Craft and industry;0;
+craft;water_well_drilling;craft|water_well_drilling;1;Craft and industry;1;Craft and industry;0;
+craft;window_construction;craft|window_construction;1;Craft and industry;1;Craft and industry;0;
+craft;winery;craft|winery;1;Craft and industry;1;Craft and industry;0;
+amenity;animal_boarding;amenity|animal_boarding;0;;;;0;
+amenity;animal_breeding;amenity|animal_breeding;0;;;;0;
+amenity;animal_shelter;amenity|animal_shelter;0;;;;0;
+amenity;archive;amenity|archive;0;;;;0;
+amenity;atm;amenity|atm;0;;;;0;
+amenity;baking_oven;amenity|baking_oven;0;;;;0;
+amenity;bbq;amenity|bbq;0;;;;0;
+amenity;bench;amenity|bench;0;;;;0;
+amenity;bicycle_parking;amenity|bicycle_parking;0;;;;0;
+amenity;bicycle_rental;amenity|bicycle_rental;0;;;;0;
+amenity;bicycle_repair_station;amenity|bicycle_repair_station;0;;;;0;
+amenity;boat_rental;amenity|boat_rental;0;;;;0;
+amenity;boat_sharing;amenity|boat_sharing;0;;;;0;
+amenity;bus_station;amenity|bus_station;0;;;;0;
+amenity;car_sharing;amenity|car_sharing;0;;;;0;
+amenity;car_wash;amenity|car_wash;0;;;;0;
+amenity;charging_station;amenity|charging_station;0;;;;0;
+amenity;clock;amenity|clock;0;;;;0;
+amenity;coworking_space;amenity|coworking_space;0;;;;0;
+amenity;crematorium;amenity|crematorium;0;;;;0;
+amenity;crypt;amenity|crypt;0;;;;0;
+amenity;dog_toilet;amenity|dog_toilet;0;;;;0;
+amenity;dojo;amenity|dojo;0;;;;0;
+amenity;drinking_water;amenity|drinking_water;0;;;;0;
+amenity;ferry_terminal;amenity|ferry_terminal;0;;;;0;
+amenity;firepit;amenity|firepit;0;;;;0;
+amenity;fountain;amenity|fountain;0;;;;0;
+amenity;fuel;amenity|fuel;0;;;;0;
+amenity;funeral_hall;amenity|funeral_hall;0;;;;0;
+amenity;game_feeding;amenity|game_feeding;0;;;;0;
+amenity;give_box;amenity|give_box;0;;;;0;
+amenity;grave_yard;amenity|grave_yard;0;;;;0;
+amenity;grit_bin;amenity|grit_bin;0;;;;0;
+amenity;gym;amenity|gym;0;;;;0;
+amenity;hunting_stand;amenity|hunting_stand;0;;;;0;
+amenity;kitchen;amenity|kitchen;0;;;;0;
+amenity;lounger;amenity|lounger;0;;;;0;
+amenity;motorcycle_parking;amenity|motorcycle_parking;0;;;;0;
+amenity;parking;amenity|parking;0;;;;0;
+amenity;parking_entrance;amenity|parking_entrance;0;;;;0;
+amenity;parking_space;amenity|parking_space;0;;;;0;
+amenity;photo_booth;amenity|photo_booth;0;;;;0;
+amenity;place_of_mourning;amenity|place_of_mourning;0;;;;0;
+amenity;post_box;amenity|post_box;0;;;;0;
+amenity;post_depot;amenity|post_depot;0;;;;0;
+amenity;public_bookcase;amenity|public_bookcase;0;;;;0;
+amenity;public_building;amenity|public_building;0;;;;0;
+amenity;recycling;amenity|recycling;0;;;;0;
+amenity;refugee_site;amenity|refugee_site;0;;;;0;
+amenity;rescue_station;amenity|rescue_station;0;;;;0;
+amenity;sanitary_dump_station;amenity|sanitary_dump_station;0;;;;0;
+amenity;sauna;amenity|sauna;0;;;;0;
+amenity;shelter;amenity|shelter;0;;;;0;
+amenity;shower;amenity|shower;0;;;;0;
+amenity;table;amenity|table;0;;;;0;
+amenity;taxi;amenity|taxi;0;;;;0;
+amenity;telephone;amenity|telephone;0;;;;0;
+amenity;toilets;amenity|toilets;0;;;;0;
+amenity;vehicle_inspection;amenity|vehicle_inspection;0;;;;0;
+amenity;vending_machine;amenity|vending_machine;0;;;;0;
+amenity;waste_basket;amenity|waste_basket;0;;;;0;
+amenity;waste_disposal;amenity|waste_disposal;0;;;;0;
+amenity;waste_transfer_station;amenity|waste_transfer_station;0;;;;0;
+amenity;water_point;amenity|water_point;0;;;;0;
+amenity;watering_place;amenity|watering_place;0;;;;0;
+building;apartments;building|apartments;0;;;;0;
+building;bakehouse;building|bakehouse;0;;;;0;
+building;barn;building|barn;0;;;;0;
+building;bridge;building|bridge;0;;;;0;
+building;bungalow;building|bungalow;0;;;;0;
+building;bunker;building|bunker;0;;;;0;
+building;cabin;building|cabin;0;;;;0;
+building;carport;building|carport;0;;;;0;
+building;conservatory;building|conservatory;0;;;;0;
+building;construction;building|construction;0;;;;0;
+building;container;building|container;0;;;;0;
+building;cowshed;building|cowshed;0;;;;0;
+building;detached;building|detached;0;;;;0;
+building;digester;building|digester;0;;;;0;
+building;dormitory;building|dormitory;0;;;;0;
+building;farm;building|farm;0;;;;0;
+building;farm_auxiliary;building|farm_auxiliary;0;;;;0;
+building;garage;building|garage;0;;;;0;
+building;garages;building|garages;0;;;;0;
+building;garbage_shed;building|garbage_shed;0;;;;0;
+building;gatehouse;building|gatehouse;0;;;;0;
+building;grandstand;building|grandstand;0;;;;0;
+building;greenhouse;building|greenhouse;0;;;;0;
+building;hangar;building|hangar;0;;;;0;
+building;hotel;building|hotel;0;;;;0;
+building;house;building|house;0;;;;0;
+building;houseboat;building|houseboat;0;;;;0;
+building;hut;building|hut;0;;;;0;
+building;military;building|military;0;;;;0;
+building;parking;building|parking;0;;;;0;
+building;residential;building|residential;0;;;;0;
+building;roof;building|roof;0;;;;0;
+building;ruins;building|ruins;0;;;;0;
+building;semidetached_house;building|semidetached_house;0;;;;0;
+building;service;building|service;0;;;;0;
+building;shed;building|shed;0;;;;0;
+building;slurry_tank;building|slurry_tank;0;;;;0;
+building;stable;building|stable;0;;;;0;
+building;static_caravan;building|static_caravan;0;;;;0;
+building;sty;building|sty;0;;;;0;
+building;terrace;building|terrace;0;;;;0;
+building;toilets;building|toilets;0;;;;0;
+building;train_station;building|train_station;0;;;;0;
+building;transformer_tower;building|transformer_tower;0;;;;0;
+building;transportation;building|transportation;0;;;;0;
+building;tree_house;building|tree_house;0;;;;0;
+building;water_tower;building|water_tower;0;;;;0;
+building;yes;building|yes;0;;;;0;
+leisure;bandstand;leisure|bandstand;0;;;;0;
+leisure;beach_resort;leisure|beach_resort;0;;;;0;
+leisure;bird_hide;leisure|bird_hide;0;;;;0;
+leisure;common;leisure|common;0;;;;0;
+leisure;firepit;leisure|firepit;0;;;;0;
+leisure;fishing;leisure|fishing;0;;;;0;
+leisure;picnic_table;leisure|picnic_table;0;;;;0;
+leisure;slipway;leisure|slipway;0;;;;0;
+leisure;swimming_area;leisure|swimming_area;0;;;;0;
+leisure;wildlife_hide;leisure|wildlife_hide;0;;;;0;
+office;private_investigator;office|private_investigator;0;;;;0;
+office;tax;office|tax;0;;;;0;
+office;therapist;office|therapist;0;;;;0;
+office;travel_agent;office|travel_agent;0;;;;0;
+shop;free_flying;shop|free_flying;0;;;;0;
+shop;robot;shop|robot;0;;;;0;
+shop;vacant;shop|vacant;0;;;;0;
+tourism;alpine_hut;tourism|alpine_hut;0;;;;0;
+tourism;apartment;tourism|apartment;0;;;;0;
+tourism;artwork;tourism|artwork;0;;;;0;
+tourism;attraction;tourism|attraction;0;;;;0;
+tourism;camp_pitch;tourism|camp_pitch;0;;;;0;
+tourism;camp_site;tourism|camp_site;0;;;;0;
+tourism;caravan_site;tourism|caravan_site;0;;;;0;
+tourism;chalet;tourism|chalet;0;;;;0;
+tourism;guest_house;tourism|guest_house;0;;;;0;
+tourism;hostel;tourism|hostel;0;;;;0;
+tourism;hotel;tourism|hotel;0;;;;0;
+tourism;motel;tourism|motel;0;;;;0;
+tourism;picnic_site;tourism|picnic_site;0;;;;0;
+tourism;viewpoint;tourism|viewpoint;0;;;;0;
+tourism;wilderness_hut;tourism|wilderness_hut;0;;;;0;
+tourism;yes;tourism|yes;0;;;;0;
+amenity;bank;amenity|bank;7;Office;7;Office;0;
+amenity;bureau_de_change;amenity|bureau_de_change;7;Office;7;Office;0;
+building;office;building|office;7;Office;7;Office;0;
+office;courier;offfice|courier;7;Office;7;Office;0;
+office;accountant;office|accountant;7;Office;7;Office;0;
+office;adoption_agency;office|adoption_agency;7;Office;7;Office;0;
+office;advertising_agency;office|advertising_agency;7;Office;7;Office;0;
+office;architect;office|architect;7;Office;7;Office;0;
+office;association;office|association;7;Office;7;Office;0;
+office;charity;office|charity;7;Office;7;Office;0;
+office;company;office|company;7;Office;7;Office;0;
+office;consulting;office|consulting;7;Office;7;Office;0;
+office;coworking;office|coworking;7;Office;7;Office;0;
+office;diplomatic;office|diplomatic;7;Office;7;Office;0;
+office;educational_institution;office|educational_institution;7;Office;7;Office;0;
+office;employment_agency;office|employment_agency;7;Office;7;Office;0;
+office;energy_supplier;office|energy_supplier;7;Office;7;Office;0;
+office;engineer;office|engineer;7;Office;7;Office;0;
+office;estate_agent;office|estate_agent;7;Office;7;Office;0;
+office;financial;office|financial;7;Office;7;Office;0;
+office;financial_advisor;office|financial_advisor;7;Office;7;Office;0;
+office;forestry;office|forestry;7;Office;7;Office;0;
+office;foundation;office|foundation;7;Office;7;Office;0;
+office;government;office|government;7;Office;7;Office;0;
+office;guide;office|guide;7;Office;7;Office;0;
+office;insurance;office|insurance;7;Office;7;Office;0;
+office;it;office|it;7;Office;7;Office;0;
+office;lawyer;office|lawyer;7;Office;7;Office;0;
+office;logistics;office|logistics;7;Office;7;Office;0;
+office;moving_company;office|moving_company;7;Office;7;Office;0;
+office;newspaper;office|newspaper;7;Office;7;Office;0;
+office;ngo;office|ngo;7;Office;7;Office;0;
+office;notary;office|notary;7;Office;7;Office;0;
+office;political_party;office|political_party;7;Office;7;Office;0;
+office;property_management;office|property_management;7;Office;7;Office;0;
+office;quango;office|quango;7;Office;7;Office;0;
+office;religion;office|religion;7;Office;7;Office;0;
+office;research;office|research;7;Office;7;Office;0;
+office;surveyor;office|surveyor;7;Office;7;Office;0;
+office;tax_advisor;office|tax_advisor;7;Office;7;Office;0;
+office;telecommunication;office|telecommunication;7;Office;7;Office;0;
+office;water_utility;office|water_utility;7;Office;7;Office;0;
+office;yes;office|yes;7;Office;7;Office;0;

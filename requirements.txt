@@ -1,0 +1,17 @@
+contextily
+geopandas
+h3
+matplotlib
+networkx
+numpy
+osmnx
+pandas<3
+pycountry
+pyproj
+pyrosm
+pyyaml
+rasterio
+requests
+scikit-learn
+scipy
+shapely

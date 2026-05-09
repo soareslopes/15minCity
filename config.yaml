@@ -1,0 +1,91 @@
+# =============================================================================
+# Caminhos de ficheiros de entrada e saída do pipeline.
+# cities_csv: Lista as cidades a processar;
+# output_dir: É a raiz de toda a estrutura de output gerada (subpastas por país/cidade, caches partilhadas, CSV final).
+# tags_csv: Define a classificação dos POIs por tipo de destino;
+# =============================================================================
+paths:
+  cities_csv: "cities.csv"
+  output_dir: "output"
+  tags_csv: "Key_Value_DestType.csv"
+
+# =============================================================================
+# Parâmetros de download de dados OpenStreetMap.
+# bbox_buffer_m: Expande o polígono da cidade antes de descarregar a rede pedonal, garantindo cobertura nas bordas.
+# poi_tile_size_m: Só é relevante no fallback Overpass (quando não há PBF disponível): tiles mais pequenos
+# reduzem o risco de timeout mas aumentam o número de pedidos à API.
+# =============================================================================
+osm:
+  bbox_buffer_m: 1000
+  poi_tile_size_m: 4000
+
+# =============================================================================
+# Configuração da grelha hexagonal H3 usada como unidade espacial de análise.
+# h3_level: Define a resolução: nível 9 (~174 m de lado, ~0.1 km²) é o recomendado para análises de escala urbana.
+# hex_acceptance_dist: Filtra hexágonos demasiado afastados da rede pedonal (parques, água, áreas sem ruas),
+# evitando resultados artificialmente nulos de acessibilidade.
+# =============================================================================
+grid:
+  h3_level: 9
+  hex_acceptance_dist: 120     # max distance (m) from hex centroid to nearest network node
+
+# =============================================================================
+# Parâmetros do cálculo de acessibilidade pedonal por intervalo de tempo.
+# engine: Selecciona o algoritmo:
+#    --> "dijkstra" (NetworkX, exacto, sem limite de contagem) ou
+#    --> "pandana" (mais rápido em cidades grandes)
+# pandana_max_pois_per_type: por hexágono.
+# time_intervals_min: Define os limiares de tempo avaliados;
+# walk_speed_ms: Controla a distância máxima percorrida em cada intervalo.
+# =============================================================================
+accessibility:
+  engine: dijkstra             # dijkstra or pandana
+  time_intervals_min: [30, 60, 90]
+  walk_speed_ms: 1.2           # walking speed in m/s (1.2 m/s ≈ 4.3 km/h)
+  pandana_max_pois_per_type: 50  # only used if engine: pandana
+
+# =============================================================================
+# Define o método de delimitação da área urbana analisada.
+# "discrete" usa directamente o polígono administrativo devolvido pelo
+# Nominatim, que pode incluir áreas rurais extensas. "continuous" deriva
+# um contorno urbano a partir dos dados de população GHSL: aplica suavização
+# gaussiana, limiarização adaptativa e fecho morfológico para produzir uma
+# mancha urbana coesa, eliminando fragmentos isolados e áreas despovoadas.
+# Os parâmetros smooth_sigma, threshold_percentile, closing_radius_px e
+# min_fragment_km2 controlam a agressividade do processo de filtragem.
+# =============================================================================
+urban_area:
+  method: "discrete"           # "discrete" | "continuous"
+  smooth_sigma: 3              # Gaussian smoothing radius in pixels (1px ≈ 100m for GHS-POP)
+  threshold_percentile: 30     # lower percentile of non-zero pixels to keep
+  closing_radius_px: 5         # morphological closing radius in pixels (5px ≈ 500m)
+  min_fragment_km2: 1.0        # discard isolated urban patches smaller than this
+
+# =============================================================================
+# Gestão do cache de ficheiros PBF do Geofabrik.
+# O pipeline descarrega o PBF regional (ex: nordeste-latest.osm.pbf) uma vez
+# e reutiliza-o para todas as cidades da mesma região. cache_dir é a pasta
+# partilhada onde esses ficheiros são guardados; nunca são apagados
+# automaticamente, permitindo processar múltiplas cidades sem re-download.
+# =============================================================================
+geofabrik:
+  cache_dir: "output/pbf_cache"
+
+# =============================================================================
+# Configuração dos dados de população GHSL (Global Human Settlement Layer).
+# dataset escolhe a camada a descarregar (recomendado: "population" → GHS-POP
+# a 100 m de resolução). year define o ano de referência dos dados.
+# Os tiles são guardados numa cache partilhada e reutilizados entre cidades.
+# =============================================================================
+ghsl:
+  dataset: "population"
+  year: 2025
+
+# =============================================================================
+# Configuração das métricas de desigualdade espacial calculadas por cidade.
+# pop_column é o nome da coluna de população nos hexágonos, usada para
+# calcular índices ponderados pela população (Gini, Palma, Theil, CV e
+# Moran's I) sobre os indicadores de acessibilidade e variedade de destinos.
+# =============================================================================
+inequality:
+  pop_column: "pop_estimada"

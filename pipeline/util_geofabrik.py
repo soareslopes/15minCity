@@ -123,12 +123,9 @@ def get_pbf(city_geom, cache_dir):
     pbf_path = Path(cache_dir) / pbf_name
 
     if pbf_path.exists():
-        size_mb = pbf_path.stat().st_size / 1e6
-        print(f"  PBF cache hit: {pbf_name} ({size_mb:.0f} MB) — region: {region_id}")
         return str(pbf_path), region_id
 
-    print(f"  Downloading PBF: {pbf_name}  (region: {region_id})")
-    print(f"  URL: {pbf_url}")
+    print(f"     Downloading PBF: {pbf_name}  ({region_id})")
     r = requests.get(pbf_url, stream=True, timeout=600)
     r.raise_for_status()
 

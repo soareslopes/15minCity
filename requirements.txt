@@ -3,9 +3,10 @@ geopandas
 h3
 matplotlib
 networkx
-numpy
+numpy<2
 osmnx
 pandas<3
+pandana
 pycountry
 pyproj
 pyrosm

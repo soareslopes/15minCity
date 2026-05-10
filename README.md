@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ### 3. Configure cities
 
-Edit `config/cities.csv` — one city per line, using an OSM-recognisable name:
+Edit `config_cities.csv` — one city per line, using an OSM-recognisable name:
 
 ```
 city_name
@@ -55,7 +55,7 @@ python main.py
 
 | Flag | Description |
 |------|-------------|
-| `--config config/config.yaml` | Use an alternative config file |
+| `--config config.yaml` | Use an alternative config file |
 | `--rerun` | Reprocess cities even if output already exists |
 | `--no-analysis` | Skip the final comparative charts (step 9) |
 
@@ -71,10 +71,9 @@ python main.py
 ├── .gitignore
 ├── README.md
 │
-├── config/
-│   ├── config.yaml                  # All parameters and paths
-│   ├── cities.csv                   # List of cities to process
-│   └── Key_Value_DestType.csv       # OSM tag → destination type mapping
+├── config.yaml                      # All parameters and paths
+├── config_cities.csv                # List of cities to process (mode: osm)
+├── config_osm_key_types.csv         # OSM tag → destination type mapping
 │
 ├── pipeline/
 │   ├── city_pipeline.py             # Per-city orchestrator
@@ -98,7 +97,7 @@ python main.py
     │   └── PRT_Lisbon.gpkg
     ├── cities/
     │   ├── BRA_Fortaleza/           # Per-city working files
-    │   │   ├── network.graphml
+    │   │   ├── network.pkl
     │   │   ├── BRA_Fortaleza.osm.pbf
     │   │   ├── BRA_Fortaleza_boundary.gpkg
     │   │   ├── BRA_Fortaleza_map_total_dest_30min.png
@@ -195,13 +194,13 @@ Computed for each indicator (`variety`, `total_dest`) × each time interval:
 
 ---
 
-## Configuration (`config/config.yaml`)
+## Configuration (`config.yaml`)
 
 ```yaml
 paths:
-  cities_csv: "config/cities.csv"
+  cities_csv: "config_cities.csv"
   output_dir: "output"
-  tags_csv:   "config/Key_Value_DestType.csv"
+  tags_csv:   "config_osm_key_types.csv"
 
 grid:
   h3_level: 9                    # H3 resolution (~174 m diameter)

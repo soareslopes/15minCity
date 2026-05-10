@@ -28,18 +28,31 @@
     pip install -r requirements.txt
 
 
-  3. Configure cities
-  -------------------
-  Edit config/cities.csv — one city per line:
+  3. Configure the city source
+  ----------------------------
+  Set city_source.mode in config.yaml:
 
-    city_name
-    Fortaleza, Ceará, Brazil
-    Lisbon, Portugal
-    Oslo, Norway
-    Buenos Aires, Argentina
+  Option A — GPKG (recommended): boundaries from a local GeoPackage.
+    city_source:
+      mode: gpkg
+      country: US          # folder inside data/ → data/US/cities.gpkg
+      sample: null         # null = all cities; integer = random N for testing
 
-  The name must be recognisable by Nominatim/OSM.
-  If the search fails, add the country: "Porto, Portugal" instead of "Porto".
+    The pipeline reads all city boundaries directly from the GPKG and skips
+    the Nominatim lookup entirely. See readme_gpkg.md for the required schema.
+
+  Option B — OSM: Nominatim lookup (original behaviour).
+    city_source:
+      mode: osm
+
+    Edit config_cities.csv — one city per line:
+      city_name
+      Fortaleza, Ceará, Brazil
+      Lisbon, Portugal
+      Oslo, Norway
+
+    The name must be recognisable by Nominatim/OSM.
+    If the search fails, add the country: "Porto, Portugal" instead of "Porto".
 
 
   4. (Optional) Pre-download PBF for offline use
@@ -60,7 +73,7 @@
     python main.py
 
   Options:
-    --config config/config.yaml    Use an alternative config file
+    --config config.yaml           Use an alternative config file
     --rerun                        Reprocess cities even if output exists
     --no-analysis                  Skip the final comparative charts (step 9)
 
@@ -74,11 +87,21 @@
   ├── main.py                           Entry point — run this
   ├── requirements.txt
   ├── README.txt
+  ├── readme_gpkg.md                    Required GPKG schema for city boundaries
   │
-  ├── config/
-  │   ├── config.yaml                   All parameters and paths
-  │   ├── cities.csv                    List of cities to process
-  │   └── Key_Value_DestType.csv        OSM tag → destination type mapping
+  ├── config.yaml                       All parameters and paths
+  ├── config_cities.csv                 City list (used only when mode: osm)
+  ├── config_osm_key_types.csv          OSM tag → destination type mapping
+  │
+  ├── data/                             Local city boundary files (mode: gpkg)
+  │   ├── US/
+  │   │   └── cities.gpkg
+  │   ├── BR/
+  │   │   └── cities.gpkg
+  │   ├── EU/
+  │   │   └── cities.gpkg
+  │   └── CH/
+  │       └── cities.gpkg
   │
   ├── pipeline/
   │   ├── city_pipeline.py              Per-city orchestrator
@@ -98,16 +121,16 @@
       ├── results_final.csv
       ├── results_partial.csv
       ├── gpkg/
-      │   ├── BRA_Fortaleza.gpkg        Final hexagon grid per city
-      │   └── PRT_Lisbon.gpkg
+      │   ├── US_Portland_4159000.gpkg  Final hexagon grid (GPKG mode naming)
+      │   └── BRA_Fortaleza.gpkg        Final hexagon grid (OSM mode naming)
       ├── cities/
-      │   ├── BRA_Fortaleza/            Per-city working files
+      │   ├── US_Portland_4159000/      Per-city working files (GPKG mode)
       │   │   ├── network.graphml
-      │   │   ├── BRA_Fortaleza.osm.pbf
-      │   │   ├── BRA_Fortaleza_boundary.gpkg
-      │   │   ├── BRA_Fortaleza_map_total_dest_30min.png
+      │   │   ├── portland.osm.pbf
+      │   │   ├── portland_boundary.gpkg
+      │   │   ├── US_Portland_4159000_map_total_dest_30min.png
       │   │   └── ghsl/
-      │   └── PRT_Lisbon/
+      │   └── BRA_Fortaleza/            Per-city working files (OSM mode)
       ├── figures/                      Comparative charts (requires >= 2 cities)
       │   ├── diminishing_returns.png
       │   ├── density_vs_accessibility.png
@@ -124,8 +147,10 @@
 
   For each city, 9 sequential steps are run:
 
-  Step 1   City boundary polygon (Nominatim / OSMnx)
-           Module: step6_ghsl.py
+  Step 1   City boundary polygon
+           GPKG mode: read directly from data/{country}/cities.gpkg (no internet)
+           OSM mode:  query Nominatim / OSMnx
+           Module: step6_ghsl.py (OSM mode only)
 
   Step 2   H3 hexagonal grid (resolution 9, ~174 m per hexagon)
            Module: step2_grid.py
@@ -184,7 +209,10 @@
   ------------------------
   One row per city. Key columns:
 
-    city_name               City name
+    city_name               City display name
+    city_id                 Unique identifier used for folder/file naming
+                            GPKG mode: "{country}_{NAME}_{GEOID}" (e.g. US_Portland_4159000)
+                            OSM mode:  "{ISO3}_{CityName}"        (e.g. BRA_Fortaleza)
     status                  success or error_*
     n_hexagons              Number of valid hexagons
     total_pop               Estimated population (GHSL)
@@ -227,13 +255,18 @@
 
 
 ================================================================================
-  CONFIGURATION  (config/config.yaml)
+  CONFIGURATION  (config.yaml)
 ================================================================================
 
   paths:
-    cities_csv: "config/cities.csv"
+    cities_csv: "config_cities.csv"
     output_dir: "output"
-    tags_csv:   "config/Key_Value_DestType.csv"
+    tags_csv:   "config_osm_key_types.csv"
+
+  city_source:
+    mode: gpkg                     # "gpkg" (local GPKG) or "osm" (Nominatim)
+    country: US                    # subfolder inside data/ (gpkg mode only)
+    sample: null                   # null = all cities; integer = random N
 
   grid:
     h3_level: 9                    # H3 resolution (~174 m hexagon diameter)

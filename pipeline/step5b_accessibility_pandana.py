@@ -59,7 +59,7 @@ def calculate_accessibility_pandana(
     G : nx.MultiDiGraph
     hex_gdf : GeoDataFrame — H3 hexagons, CRS EPSG:4326
     destinations : DataFrame — columns lat, lon, Type, Type_Name
-    tags_csv : str — path to Key_Value_DestType.csv (sep=';')
+    tags_csv : str — path to config_osm_key_types.csv (sep=';')
     time_intervals_min : list[int]
     walk_speed_ms : float
     hex_acceptance_dist : float — max metres from hex centroid to network node

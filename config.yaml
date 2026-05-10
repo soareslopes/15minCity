@@ -5,9 +5,23 @@
 # tags_csv: Define a classificação dos POIs por tipo de destino;
 # =============================================================================
 paths:
-  cities_csv: "config/cities.csv"
+  cities_csv: "config_cities.csv"
   output_dir: "output"
-  tags_csv: "config/Key_Value_DestType.csv"
+  tags_csv: "config_osm_key_types.csv"
+
+# =============================================================================
+# Fonte dos limites administrativos das cidades.
+# mode: "gpkg" usa o ficheiro data/{country}/cities.gpkg (ignora o Nominatim);
+#        "osm"  usa o Nominatim via OSMnx (comportamento original, lê cities_csv).
+# country: código da pasta dentro de data/ (ex: US, BR, EU, CH).
+#          Ignorado quando mode: osm.
+# sample: null = processa todas as cidades do GPKG;
+#         inteiro N = amostra aleatória de N cidades (útil para testes).
+# =============================================================================
+city_source:
+  mode: gpkg          # "gpkg" | "osm"
+  country: US         # pasta dentro de data/
+  sample: 1        # null = todas; inteiro = amostra aleatória de N cidades
 
 # =============================================================================
 # Parâmetros de download de dados OpenStreetMap.
@@ -39,10 +53,10 @@ grid:
 # walk_speed_ms: Controla a distância máxima percorrida em cada intervalo.
 # =============================================================================
 accessibility:
-  engine: dijkstra             # dijkstra or pandana
-  time_intervals_min: [30, 60, 90]
-  walk_speed_ms: 1.2           # walking speed in m/s (1.2 m/s ≈ 4.3 km/h)
-  pandana_max_pois_per_type: 50  # only used if engine: pandana
+  engine: dijkstra                  # dijkstra or pandana
+  time_intervals_min: [30, 60, 90]  # time thresholds in minutes
+  walk_speed_ms: 1.2                # walking speed in m/s (1.2 m/s ≈ 4.3 km/h)
+  pandana_max_pois_per_type: 50     # only used if engine: pandana
 
 # =============================================================================
 # Define o método de delimitação da área urbana analisada.

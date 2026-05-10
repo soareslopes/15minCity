@@ -99,7 +99,7 @@ def calculate_accessibility(
     destinations : DataFrame
         Columns: lat, lon, Type, Type_Name (output of osm_city.get_destinations).
     tags_csv : str
-        Path to Key_Value_DestType.csv (sep=';').
+        Path to config_osm_key_types.csv (sep=';').
     time_intervals_min : list[int]
         Walking time thresholds, e.g. [15, 30, 45, 60, 75, 90].
     walk_speed_ms : float

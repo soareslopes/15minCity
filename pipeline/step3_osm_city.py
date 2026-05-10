@@ -53,7 +53,6 @@ def _get_network_from_pbf(pbf_path, polygon, config=None):
     bbox = list(poly.bounds)  # [west, south, east, north]
     osm = pyrosm.OSM(pbf_path, bounding_box=bbox)
 
-    print("  Extracting walking network from PBF (pyrosm)…")
     nodes, edges = osm.get_network(network_type="walking", nodes=True)
 
     if nodes is None or edges is None or len(nodes) == 0 or len(edges) == 0:
@@ -70,7 +69,6 @@ def _get_network_from_pbf(pbf_path, polygon, config=None):
             data['length'] = 1.0
 
     G = ox.truncate.largest_component(G, strongly=True)
-    print(f"  Network ready (PBF): {len(G.nodes)} nodes, {len(G.edges)} edges")
     return G
 
 
@@ -104,8 +102,6 @@ def get_walking_network(polygon, config=None, pbf_path=None):
     buffered.geometry = buffered.buffer(buffer_m)
     buffered = buffered.to_crs("EPSG:4326")
 
-    print("  Downloading walking network (OSMnx)…")
-    t0 = time.time()
     last_exc = None
     for attempt, endpoint_idx in enumerate(range(len(_OVERPASS_ENDPOINTS))):
         _set_overpass_endpoint(endpoint_idx)
@@ -115,16 +111,12 @@ def get_walking_network(polygon, config=None, pbf_path=None):
                 network_type="walk",
                 retain_all=False,
             )
-            print(
-                f"  Network ready: {len(G.nodes)} nodes, {len(G.edges)} edges "
-                f"— {time.strftime('%H:%M:%S', time.gmtime(time.time() - t0))}"
-            )
             return G
         except Exception as exc:
             last_exc = exc
             err = str(exc).lower()
             if "timed out" in err or "timeout" in err or "connect" in err:
-                print(f"  Endpoint {_OVERPASS_ENDPOINTS[endpoint_idx]} failed — trying next…")
+                print(f"     WARNING: Overpass endpoint {endpoint_idx + 1} timed out — retrying")
                 time.sleep(5 * (attempt + 1))
             else:
                 raise
@@ -277,7 +269,7 @@ def get_destinations(polygon, tags_csv, pbf_path=None, tile_size_m=4000):
     Parameters
     ----------
     polygon    : Shapely geometry (WGS84)
-    tags_csv   : str — path to Key_Value_DestType.csv (sep=';')
+    tags_csv   : str — path to config_osm_key_types.csv (sep=';')
     pbf_path   : str or None — path to a local .osm.pbf file
     tile_size_m: int — Overpass tile size in metres (fallback only)
 

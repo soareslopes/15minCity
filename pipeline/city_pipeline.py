@@ -38,6 +38,18 @@ def city_folder_name(city_name):
     return f"{iso3}_{city_first}"
 
 
+def _run_id(config):
+    engine = config.get("accessibility", {}).get("engine", "dijkstra")
+    intervals = config.get("accessibility", {}).get("time_intervals_min", [30, 60, 90])
+    h3 = config.get("grid", {}).get("h3_level", 9)
+    ua = config.get("urban_area", {}).get("method", "discrete")
+    istr = "-".join(str(t) for t in intervals)
+    run = f"{engine}_i{istr}_h{h3}"
+    if ua == "continuous":
+        run += "_cont"
+    return run
+
+
 def _step_done(n, total, label, elapsed):
     prefix = f"  [{n}/{total}] {label} "
     print(f"{prefix}{'.' * max(1, 58 - len(prefix))} {elapsed:.1f}s")
@@ -72,6 +84,7 @@ def process_city(city_name, config, city_geom=None, city_id=None):
     t_start = time.time()
     tags_csv = config["paths"]["tags_csv"]
     out_dir = Path(config["paths"]["output_dir"])
+    run_dir = out_dir / "results" / _run_id(config)
     city_safe = (
         city_name.lower()
         .replace(", ", "_")
@@ -80,7 +93,7 @@ def process_city(city_name, config, city_geom=None, city_id=None):
     )
     city_dir = out_dir / "cities" / city_id
     city_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "gpkg").mkdir(parents=True, exist_ok=True)
+    (run_dir / "gpkg").mkdir(parents=True, exist_ok=True)
     intervals = config["accessibility"]["time_intervals_min"]
     speed = config["accessibility"]["walk_speed_ms"]
     pop_col = config["inequality"]["pop_column"]
@@ -329,7 +342,7 @@ def process_city(city_name, config, city_geom=None, city_id=None):
     # 8/9. Save GeoPackage
     # ------------------------------------------------------------------
     t0 = time.time()
-    gpkg_out = out_dir / "gpkg" / f"{city_id}_{engine}.gpkg"
+    gpkg_out = run_dir / "gpkg" / f"{city_id}_{engine}.gpkg"
     hex_final.to_file(gpkg_out)
     _step_done(8 + _ofs, STEPS, "GeoPackage saved", time.time() - t0)
 

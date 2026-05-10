@@ -21,7 +21,7 @@ paths:
 city_source:
   mode: gpkg          # "gpkg" | "osm"
   country: US         # pasta dentro de data/
-  sample: 1        # null = todas; inteiro = amostra aleatória de N cidades
+  sample: null        # null = todas; inteiro = amostra aleatória de N cidades
 
 # =============================================================================
 # Parâmetros de download de dados OpenStreetMap.
@@ -53,8 +53,8 @@ grid:
 # walk_speed_ms: Controla a distância máxima percorrida em cada intervalo.
 # =============================================================================
 accessibility:
-  engine: dijkstra                  # dijkstra or pandana
-  time_intervals_min: [30, 60, 90]  # time thresholds in minutes
+  engine: pandana                  # dijkstra or pandana
+  time_intervals_min: [30, 45, 60]  # time thresholds in minutes
   walk_speed_ms: 1.2                # walking speed in m/s (1.2 m/s ≈ 4.3 km/h)
   pandana_max_pois_per_type: 50     # only used if engine: pandana
 

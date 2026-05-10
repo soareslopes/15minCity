@@ -39,7 +39,7 @@
       sample: null         # null = all cities; integer = random N for testing
 
     The pipeline reads all city boundaries directly from the GPKG and skips
-    the Nominatim lookup entirely. See readme_gpkg.md for the required schema.
+    the Nominatim lookup entirely. See readme_gpkg.txt for the required schema.
 
   Option B — OSM: Nominatim lookup (original behaviour).
     city_source:
@@ -87,7 +87,7 @@
   ├── main.py                           Entry point — run this
   ├── requirements.txt
   ├── README.txt
-  ├── readme_gpkg.md                    Required GPKG schema for city boundaries
+  ├── readme_gpkg.txt                   Required GPKG schema for city boundaries
   │
   ├── config.yaml                       All parameters and paths
   ├── config_cities.csv                 City list (used only when mode: osm)
@@ -98,17 +98,15 @@
   │   │   └── cities.gpkg
   │   ├── BR/
   │   │   └── cities.gpkg
-  │   ├── EU/
-  │   │   └── cities.gpkg
-  │   └── CH/
+  │   └── EU/
   │       └── cities.gpkg
   │
   ├── pipeline/
   │   ├── city_pipeline.py              Per-city orchestrator
   │   ├── step2_grid.py                 H3 hexagonal grid
   │   ├── step3_osm_city.py             Walking network + POIs (OSMnx / PBF)
-  │   ├── step5_accessibility.py        Accessibility (Dijkstra, NetworkX + NumPy)
-  │   ├── step5b_accessibility_pandana.py   Accessibility (Pandana, faster for large cities)
+  │   ├── step5_accessibility.py        Accessibility — Dijkstra (NetworkX)
+  │   ├── step5b_accessibility_pandana.py   Accessibility — Pandana (faster)
   │   ├── step6_ghsl.py                 City geometry + GHSL population
   │   ├── step7_urban_area.py           Urban footprint filter (optional)
   │   ├── step8_inequity.py             Gini, Palma, Theil, CV, Moran's I
@@ -118,34 +116,46 @@
   │   └── util_maps.py                  PNG map generation (Positron basemap)
   │
   └── output/                           Generated automatically
-      ├── results_final.csv
-      ├── results_partial.csv
-      ├── gpkg/
-      │   ├── US_Portland_4159000.gpkg  Final hexagon grid (GPKG mode naming)
-      │   └── BRA_Fortaleza.gpkg        Final hexagon grid (OSM mode naming)
-      ├── cities/
-      │   ├── US_Portland_4159000/      Per-city working files (GPKG mode)
-      │   │   ├── network.graphml
-      │   │   ├── portland.osm.pbf
-      │   │   ├── portland_boundary.gpkg
-      │   │   ├── US_Portland_4159000_map_total_dest_30min.png
-      │   │   └── ghsl/
-      │   └── BRA_Fortaleza/            Per-city working files (OSM mode)
-      ├── figures/                      Comparative charts (requires >= 2 cities)
-      │   ├── diminishing_returns.png
-      │   ├── density_vs_accessibility.png
-      │   ├── inequity_distributions.png
-      │   └── gini_vs_density.png
+      ├── cities/                       Per-city working files (shared across runs)
+      │   └── US_Portland_4159000/
+      │       ├── network.pkl           Walking network cache (pickle)
+      │       ├── portland.osm.pbf      Clipped city PBF (if osmium available)
+      │       ├── portland_boundary.gpkg
+      │       ├── US_Portland_4159000_map_total_dest_30min.png
+      │       └── ghsl/                 GHSL population tiles
+      ├── results/                      One subfolder per run configuration
+      │   └── pandana_i30-45-60_h9/     Run ID derived from config.yaml
+      │       ├── results_partial.csv   Saved after each city (resume-safe)
+      │       ├── results_final.csv     Written at the end of each run
+      │       ├── gpkg/
+      │       │   └── US_Portland_4159000_pandana.gpkg
+      │       └── figures/              Comparative charts (requires >= 2 cities)
+      │           ├── diminishing_returns.png
+      │           ├── density_vs_accessibility.png
+      │           ├── inequity_distributions.png
+      │           └── gini_vs_density.png
       └── cache/
           ├── pbf_cache/                Geofabrik regional PBFs (shared)
           └── ghsl_cache/               GHSL population tiles (shared)
+
+
+  Run ID format
+  -------------
+  The run subfolder is derived automatically from config.yaml:
+
+    {engine}_i{intervals}_h{h3_level}[_cont]
+
+  Examples:
+    pandana_i30-45-60_h9          pandana engine, 30/45/60 min, H3 level 9
+    dijkstra_i30-60-90_h9         dijkstra engine, 30/60/90 min, H3 level 9
+    pandana_i30-60-90_h9_cont     same but with continuous urban footprint
 
 
 ================================================================================
   PIPELINE STEPS
 ================================================================================
 
-  For each city, 9 sequential steps are run:
+  For each city, up to 9 sequential steps are run (10 if urban_area: continuous):
 
   Step 1   City boundary polygon
            GPKG mode: read directly from data/{country}/cities.gpkg (no internet)
@@ -156,22 +166,24 @@
            Module: step2_grid.py
 
   Step 3   Walking network — extracted from local PBF if available,
-           otherwise downloaded from OSMnx / Overpass API and cached
+           otherwise downloaded from OSMnx / Overpass API
+           Cached as network.pkl in the city folder
            Module: step3_osm_city.py
 
   Step 4   POI extraction and classification by destination type
            Module: step3_osm_city.py + util_geofabrik.py
 
   Step 5   Pedestrian accessibility per hexagon (all time thresholds)
-           Module: step5_accessibility.py
+           Engine: dijkstra (exact) or pandana (faster, set in config.yaml)
+           Module: step5_accessibility.py / step5b_accessibility_pandana.py
 
   Step 6   Population estimates from GHSL GHS-POP tiles
            Module: step6_ghsl.py
 
-  Step 7   Urban footprint filter (optional, method = "continuous")
+  Step 7   Urban footprint filter (only when urban_area.method = "continuous")
            Module: step7_urban_area.py
 
-  Step 8   Spatial inequality metrics
+  Step 8   Spatial inequality metrics (Gini, Palma, Theil, CV, Moran's I)
            Module: step8_inequity.py
 
   Step 9   Save GeoPackage + accessibility map
@@ -179,57 +191,67 @@
 
 
 ================================================================================
-  ACCESSIBILITY ENGINE
+  ACCESSIBILITY ENGINES
 ================================================================================
 
-  Uses a POI-forward Dijkstra strategy on the OSM walking network:
+  Dijkstra (default, exact)
+  -------------------------
+  POI-forward strategy on the OSM walking network:
 
   1. For each unique OSM node containing a POI, run
      single_source_dijkstra_path_length once with the maximum cutoff.
      Results are stored in a NumPy float32 matrix (n_POI_nodes x n_hexagons).
 
-  2. For each time threshold (30, 60, 90 min), a simple threshold is applied
-     to the matrix — no additional graph traversal.
+  2. For each time threshold, a simple threshold is applied to the matrix —
+     no additional graph traversal.
 
-  3. For each POI type and threshold, accessible counts per hexagon are
-     computed with a vectorised NumPy sum.
+  3. Accessible counts per hexagon are computed with a vectorised NumPy sum.
 
-  Each POI node is traversed exactly once. All time intervals and all
-  destination types are derived from this single pass.
+  Each POI node is traversed exactly once. All time intervals and destination
+  types are derived from this single pass.
 
-  Acceptance filter: hexagons whose centroid is more than 120 m from the
-  nearest network node are excluded (parks, water, areas without streets).
+  Pandana (faster for large cities)
+  ----------------------------------
+  Builds a contraction-hierarchies network (pandana.Network) from the OSM
+  graph and uses aggregate queries to count POIs within each time threshold.
+  Significantly faster on cities with many hexagons or POIs.
+  Requires numpy<2 (pinned in requirements.txt).
+
+  Acceptance filter (both engines)
+  ---------------------------------
+  Hexagons whose centroid is more than 120 m from the nearest network node
+  are excluded (parks, water bodies, areas without street coverage).
 
 
 ================================================================================
   OUTPUT FILES
 ================================================================================
 
-  output/results_final.csv
-  ------------------------
-  One row per city. Key columns:
+  output/results/{run_id}/results_final.csv
+  ------------------------------------------
+  One row per successfully processed city. Key columns:
 
     city_name               City display name
     city_id                 Unique identifier used for folder/file naming
-                            GPKG mode: "{country}_{NAME}_{GEOID}" (e.g. US_Portland_4159000)
-                            OSM mode:  "{ISO3}_{CityName}"        (e.g. BRA_Fortaleza)
-    status                  success or error_*
-    n_hexagons              Number of valid hexagons
+                            GPKG mode: "{country}_{NAME}_{GEOID}"
+                            OSM mode:  "{ISO3}_{CityName}"
+    status                  success (error cities are not saved)
+    n_hexagons              Number of valid hexagons after acceptance filter
     total_pop               Estimated population (GHSL)
     pop_density_ha          Population density (inhabitants/ha)
-    mean_variety_30min      Mean destination type variety at 30 min
-    mean_total_dest_30min   Mean total destinations at 30 min
-    gini_variety_30min      Territorial Gini for variety at 30 min
-    gini_pop_variety_30min  Population-weighted Gini
-    palma_variety_30min     Palma ratio
-    moran_i_variety_30min   Moran's I (spatial autocorrelation)
+    mean_variety_Xmin       Mean destination type variety at X min
+    mean_total_dest_Xmin    Mean total destinations at X min
+    gini_variety_Xmin       Territorial Gini for variety at X min
+    gini_pop_variety_Xmin   Population-weighted Gini
+    palma_variety_Xmin      Palma ratio
+    moran_i_variety_Xmin    Moran's I (spatial autocorrelation)
     runtime_s               Processing time in seconds
 
-  (columns repeat for each time interval: 30, 60, 90 min)
+  Columns repeat for each time interval defined in config.yaml.
 
 
-  output/gpkg/BRA_CityName.gpkg
-  -----------------------------
+  output/results/{run_id}/gpkg/{city_id}_{engine}.gpkg
+  ------------------------------------------------------
   H3 hexagonal grid with all attributes. Open directly in QGIS.
   Key columns per hexagon:
 
@@ -259,7 +281,7 @@
 ================================================================================
 
   paths:
-    cities_csv: "config_cities.csv"
+    cities_csv: "config_cities.csv"    # city list for OSM mode
     output_dir: "output"
     tags_csv:   "config_osm_key_types.csv"
 
@@ -273,9 +295,10 @@
     hex_acceptance_dist: 120       # Max centroid-to-node distance (metres)
 
   accessibility:
-    engine: dijkstra               # "dijkstra" or "pandana"
+    engine: pandana                # "dijkstra" or "pandana"
     time_intervals_min: [30, 60, 90]
     walk_speed_ms: 1.2             # 1.2 m/s ≈ 4.3 km/h
+    pandana_max_pois_per_type: 50  # only used when engine: pandana
 
   urban_area:
     method: "discrete"             # "discrete" or "continuous" (GHSL-derived)

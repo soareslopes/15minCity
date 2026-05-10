@@ -8,10 +8,7 @@ import yaml
 # Make pipeline/ importable without installing as a package
 sys.path.insert(0, str(Path(__file__).parent / "pipeline"))
 
-from city_pipeline import (
-    city_folder_name,
-    process_city,
-)
+from city_pipeline import city_folder_name, process_city, _run_id
 
 
 def load_config(path="config.yaml"):
@@ -92,13 +89,17 @@ def main():
     output_dir = Path(config["paths"]["output_dir"])
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    run_dir = output_dir / "results" / _run_id(config)
+    run_dir.mkdir(parents=True, exist_ok=True)
+    print(f"Run: {run_dir.name}")
+
     mode = config.get("city_source", {}).get("mode", "osm")
     if mode == "gpkg":
         city_list = _load_cities_from_gpkg(config)
     else:
         city_list = _load_cities_from_csv(config)
 
-    partial_path = output_dir / "results_partial.csv"
+    partial_path = run_dir / "results_partial.csv"
     if partial_path.exists():
         results = pd.read_csv(partial_path).to_dict("records")
     else:
@@ -106,40 +107,34 @@ def main():
 
     for i, (city_name, city_id, city_geom) in enumerate(city_list, 1):
         engine = config.get("accessibility", {}).get("engine", "dijkstra")
-        gpkg_out = output_dir / "gpkg" / f"{city_id}_{engine}.gpkg"
+        gpkg_out = run_dir / "gpkg" / f"{city_id}_{engine}.gpkg"
 
         if not args.rerun and gpkg_out.exists():
+            print("============================================")
             print(f"[{i}/{len(city_list)}] {city_name} — skip")
             continue
 
+        print("============================================")
         print(f"\n[{i}/{len(city_list)}] {city_name}  [{city_id}]")
         try:
             row = process_city(city_name, config, city_geom=city_geom, city_id=city_id)
         except Exception as exc:
             print(f"  FATAL ERROR: {exc}")
-            row = {
-                "city_name": city_name,
-                "city_id": city_id,
-                "status": "fatal_error",
-                "error": str(exc),
-            }
+            row = None
 
-        if row:
+        if row and row.get("status") == "success":
             results = [r for r in results if r.get("city_id") != city_id]
             results.append(row)
             pd.DataFrame(results).to_csv(partial_path, index=False)
 
-    final_path = output_dir / "results_final.csv"
+    final_path = run_dir / "results_final.csv"
     pd.DataFrame(results).to_csv(final_path, index=False)
     print(f"\nResults saved → {final_path}")
 
     if not args.no_analysis and len(results) > 1:
         try:
-            from step9_analysis import (
-                run_analysis,
-            )
-
-            run_analysis(str(final_path), str(output_dir))
+            from step9_analysis import run_analysis
+            run_analysis(str(final_path), str(run_dir))
         except Exception as exc:
             print(f"Analysis step failed: {exc}")
 
